@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Difference Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Viva Vas Legas</h1>
+    <p id="date-difference"></p>
+
+    <script>
+        // Target date: March 9, 2025
+        const targetDate = new Date('2025-03-09');
+
+        function calculateDateDifference() {
+            const currentDate = new Date();
+            const differenceInTime = targetDate - currentDate;
+
+            if (differenceInTime >= 0) {
+                const days = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
+                document.getElementById('date-difference').textContent = `Solang noch ${days} Tage bis hoch am 90.03.2025.`;
+            } else {
+                document.getElementById('date-difference').textContent = `March 9, 2025, has already passed.`;
+            }
+        }
+
+        // Initial calculation and periodic update every day
+        calculateDateDifference();
+        setInterval(calculateDateDifference, 86400000); // Update every 24 hours
+    </script>
+</body>
+</html>

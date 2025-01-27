@@ -1,30 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Difference Calculator</title>
+    <title>Tage bis zum 9. März 2025</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             padding: 20px;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            color: #fff;
         }
         p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <h1>Viva Vas Legas</h1>
+    <h1>Countdown zum 9. März 2025</h1>
     <p id="date-difference"></p>
 
     <script>
-        // Target date: March 9, 2025
+        // Ziel-Datum: 9. März 2025
         const targetDate = new Date('2025-03-09');
 
         function calculateDateDifference() {
@@ -33,15 +43,15 @@
 
             if (differenceInTime >= 0) {
                 const days = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
-                document.getElementById('date-difference').textContent = `Solang noch: Genau ${days} Tage bis hoch am 09.03.2025.`;
+                document.getElementById('date-difference').textContent = `So lange noch: Genau ${days} Tage bis zum 9. März 2025.`;
             } else {
-                document.getElementById('date-difference').textContent = `March 9, 2025, has already passed.`;
+                document.getElementById('date-difference').textContent = `Der 9. März 2025 ist schon vorbei.`;
             }
         }
 
-        // Initial calculation and periodic update every day
+        // Initiale Berechnung und tägliches Update
         calculateDateDifference();
-        setInterval(calculateDateDifference, 86400000); // Update every 24 hours
+        setInterval(calculateDateDifference, 86400000); // Update alle 24 Stunden
     </script>
 </body>
 </html>

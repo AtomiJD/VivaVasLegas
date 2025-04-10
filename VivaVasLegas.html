@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tage bis zum 9. März 2025</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-            color: #333;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        p {
-            font-size: 1.5rem;
-            color: #fff;
-        }
-    </style>
-</head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Oster Festtage Rechner</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                text-align: center;
+                padding: 20px;
+                background: linear-gradient(135deg, #ff9be6 0%, #fd02be 100%);
+                color: #333;
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: #fff;
+            }
+            p {
+                font-size: 1.5rem;
+                color: #fff;
+            }
+        </style>
+    </head>
 <body>
-    <h1>Viva Vas Legas!</h1>
+    <h1>Viva Jammertal</h1>
     <p id="date-difference"></p>
 
     <script>
-        // Ziel-Datum: 9. März 2025
-        const targetDate = new Date('2025-03-09');
+        const targetDate = new Date('2025-04-18');
 
         function calculateDateDifference() {
             const currentDate = new Date();
@@ -43,15 +42,15 @@
 
             if (differenceInTime >= 0) {
                 const days = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
-                document.getElementById('date-difference').textContent = `So lange noch: Genau ${days} Tage bis HOCH am 9. März 2025.`;
+                document.getElementById('date-difference').textContent = `Solang noch: Fenau ${days} Tage bis hin am 18.04.2025.`;
             } else {
-                document.getElementById('date-difference').textContent = `Der 9. März 2025 ist schon vorbei.`;
+                document.getElementById('date-difference').textContent = `Dein Urlaub ist leider vorbei :-(`;
             }
         }
 
-        // Initiale Berechnung und tägliches Update
+        // Initial calculation and periodic update every day
         calculateDateDifference();
-        setInterval(calculateDateDifference, 86400000); // Update alle 24 Stunden
+        setInterval(calculateDateDifference, 86400000); // Update every 24 hours
     </script>
 </body>
 </html>

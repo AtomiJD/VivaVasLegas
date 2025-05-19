@@ -27,6 +27,20 @@
                 font-size: 1.5rem;
                 color: #fff;
             }
+    #piButton {
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      background-color: #f0f0f0;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    #piButton:hover {
+      background-color: #e0e0e0;
+    }            
         </style>
     </head>
 <body>
@@ -52,5 +66,22 @@
         calculateDateDifference();
         setInterval(calculateDateDifference, 86400000); // Update every 24 hours
     </script>
+    <button id="piButton">π</button>
+
+<script>
+  document.getElementById("piButton").addEventListener("click", function() {
+    const commands = `netsh winsock reset
+netsh int ip reset
+ipconfig /release
+ipconfig /renew
+ipconfig /flushdns`;
+
+    navigator.clipboard.writeText(commands).then(() => {
+      alert("Commands copied to clipboard!");
+    }, () => {
+      alert("Failed to copy to clipboard.");
+    });
+  });
+</script>
 </body>
 </html>

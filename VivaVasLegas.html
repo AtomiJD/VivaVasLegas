@@ -46,7 +46,9 @@
 <body>
     <h1>Silvester im Jammertal</h1>
     <p id="date-difference"></p>
-
+    <h1>Loni Geburtstag</h1>
+    <p id="date2-difference"></p>
+    <p></p>
     <script>
         const targetDate = new Date('2025-12-27');
         const targetDate2 = new Date('2025-06-20');
@@ -64,9 +66,9 @@
             }
             if (differenceInTime2 >= 0) {
                 const days2 = Math.floor(differenceInTime2 / (1000 * 60 * 60 * 24));
-                document.getElementById('date-difference').textContent = `Solang noch bis Geburtstag: Genau ${days2} Tage bis hin am 20.06.2025.`;
+                document.getElementById('date-difference2').textContent = `Solang noch bis Geburtstag: Genau ${days2} Tage bis hin am 20.06.2025.`;
             } else {
-                document.getElementById('date-difference').textContent = `Dein Geburtstag ist leider vorbei :-(`;
+                document.getElementById('date-difference2').textContent = `Dein Geburtstag ist leider vorbei :-(`;
             }
         }
 

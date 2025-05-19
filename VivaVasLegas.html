@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Oster Festtage Rechner</title>
+        <title>Atloni Festtage Rechner</title>
         <style>
             body {
                 font-family: 'Arial', sans-serif;
@@ -49,16 +49,24 @@
 
     <script>
         const targetDate = new Date('2025-12-27');
+        const targetDate2 = new Date('2025-06-20');
 
         function calculateDateDifference() {
             const currentDate = new Date();
             const differenceInTime = targetDate - currentDate;
+            const differenceInTime2 = targetDate2 - currentDate;
 
             if (differenceInTime >= 0) {
                 const days = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
                 document.getElementById('date-difference').textContent = `Solang noch: Genau ${days} Tage bis hin am 27.12.2025.`;
             } else {
                 document.getElementById('date-difference').textContent = `Dein Urlaub ist leider vorbei :-(`;
+            }
+            if (differenceInTime2 >= 0) {
+                const days2 = Math.floor(differenceInTime2 / (1000 * 60 * 60 * 24));
+                document.getElementById('date-difference').textContent = `Solang noch bis Geburtstag: Genau ${days2} Tage bis hin am 20.06.2025.`;
+            } else {
+                document.getElementById('date-difference').textContent = `Dein Geburtstag ist leider vorbei :-(`;
             }
         }
 

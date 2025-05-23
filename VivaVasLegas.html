@@ -46,9 +46,6 @@
 <body>
     <h1>Silvester im Jammertal</h1>
     <p id="date-difference"></p>
-    <h1>Loni Geburtstag</h1>
-    <p id="date2-difference"></p>
-    <p></p>
     <script>
         const targetDate = new Date('2025-12-27');
         const targetDate2 = new Date('2025-06-20');
@@ -56,7 +53,6 @@
         function calculateDateDifference() {
             const currentDate = new Date();
             const differenceInTime = targetDate - currentDate;
-            const differenceInTime2 = targetDate2 - currentDate;
 
             if (differenceInTime >= 0) {
                 const days = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
@@ -64,34 +60,14 @@
             } else {
                 document.getElementById('date-difference').textContent = `Dein Urlaub ist leider vorbei :-(`;
             }
-            if (differenceInTime2 >= 0) {
-                const days2 = Math.floor(differenceInTime2 / (1000 * 60 * 60 * 24));
-                document.getElementById('date2-difference').textContent = `Solang noch bis Geburtstag: Genau ${days2} Tage bis hin am 20.06.2025.`;
-            } else {
-                document.getElementById('date2-difference').textContent = `Dein Geburtstag ist leider vorbei :-(`;
-            }
+
         }
 
         // Initial calculation and periodic update every day
         calculateDateDifference();
         setInterval(calculateDateDifference, 86400000); // Update every 24 hours
     </script>
-    <button id="piButton">π</button>
 
-<script>
-  document.getElementById("piButton").addEventListener("click", function() {
-    const commands = `netsh winsock reset
-netsh int ip reset
-ipconfig /release
-ipconfig /renew
-ipconfig /flushdns`;
 
-    navigator.clipboard.writeText(commands).then(() => {
-      alert("Commands copied to clipboard!");
-    }, () => {
-      alert("Failed to copy to clipboard.");
-    });
-  });
-</script>
 </body>
 </html>
